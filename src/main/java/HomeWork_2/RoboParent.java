@@ -2,9 +2,9 @@ package HomeWork_2;
 
 import java.util.Random;
 
-public class RoboParent extends Parent implements RoboHuman{
-    int number;
-    public RoboParent(String name, int number, int year) {
+public class RoboParent<T extends Number> extends Parent implements RoboHuman{
+    T number;
+    public RoboParent(String name, T number, int year) {
         super(name, year);
         this.number = number;
     }
@@ -23,7 +23,6 @@ public class RoboParent extends Parent implements RoboHuman{
     public int setNewNumber() {
         Random rd = new Random();
         int ser = rd.nextInt(1, 100);
-        this.number = ser;
         return ser;
     }
 
